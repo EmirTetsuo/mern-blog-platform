@@ -29,7 +29,7 @@ app.use('/api/comments', commentRoute)
 async function start() {
     try {
         await mongoose.connect(
-            `mongodb+srv://admin:wwwwww@cluster0.udlxg.mongodb.net/Blog?retryWrites=true&w=majority&appName=Cluster0`,
+            process.env.MONGO_URL,
         )
         console.log('mongDb connected')
 
